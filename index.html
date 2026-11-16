@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f0818">
+<title>Lyoha — стример</title>
+<meta name="description" content="Lyoha: Twitch, TikTok, Telegram, сетап и донат">
+<meta property="og:title" content="Lyoha — стример">
+<meta property="og:description" content="Twitch, TikTok, Telegram, сетап и донат">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>💜</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@500;700;800&display=swap">
+<style>
+@property --angle-1{syntax:"<angle>";inherits:false;initial-value:-75deg}
+@property --angle-2{syntax:"<angle>";inherits:false;initial-value:-45deg}
+:root{
+  --bg:#0f0818;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);
+  --txt:#f4eefc;--mut:#b5a6cf;--v1:#8b5cf6;--v2:#c084fc;--v3:#5b21b6;
+  --anim--hover-time:400ms;--anim--hover-ease:cubic-bezier(.25,1,.5,1);
+  color-scheme:dark;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--txt);font:400 16px/1.55 "Inter",system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Unbounded","Inter",sans-serif;margin:0;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+
+/* background */
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
+.o1{width:60vmax;height:60vmax;background:var(--v3);top:-20vmax;left:-15vmax}
+.o2{width:45vmax;height:45vmax;background:#a21caf;bottom:-15vmax;right:-15vmax;animation-delay:-6s;opacity:.4}
+.o3{width:30vmax;height:30vmax;background:var(--v1);top:40%;left:50%;animation-delay:-11s;opacity:.3}
+@keyframes drift{to{transform:translate(6vmax,5vmax) scale(1.15)}}
+.grain{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(circle at 50% 30%,#000,transparent 75%)}
+
+main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:16px 18px 40px}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:6px 0}
+.logo{font-family:"Unbounded",sans-serif;font-weight:800;font-size:18px}
+.logo i{font-style:normal;color:var(--v2)}
+
+/* hero */
+.hero{display:grid;gap:28px;padding:34px 0 20px;text-align:center;justify-items:center}
+.scene{perspective:900px;width:min(300px,78vw);aspect-ratio:1;position:relative}
+.stack{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out}
+.ring{position:absolute;inset:0;border-radius:50%;padding:5px;background:conic-gradient(from 0deg,var(--v1),var(--v2),#f0abfc,var(--v1));animation:spin 8s linear infinite;box-shadow:0 0 80px rgba(139,92,246,.55);transform:translateZ(10px)}
+@keyframes spin{to{transform:translateZ(10px) rotate(360deg)}}
+.ava{position:absolute;inset:12px;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 30% 25%,#7c3aed,#2e1065 70%);display:grid;place-items:center;transform:translateZ(30px);border:3px solid rgba(15,8,24,.9)}
+.ava img{width:100%;height:100%;object-fit:cover;display:block}
+.ava b{font:800 110px/1 "Unbounded",sans-serif;color:rgba(255,255,255,.92);text-shadow:0 8px 30px rgba(0,0,0,.4)}
+.chip{position:absolute;width:62px;height:62px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.5);animation:bob 5s ease-in-out infinite}
+.chip svg{width:28px;height:28px;fill:#fff;filter:drop-shadow(0 4px 6px rgba(0,0,0,.4))}
+.c1{top:-6%;right:-8%;transform:translateZ(90px) rotate(10deg)}
+.c2{bottom:4%;left:-12%;transform:translateZ(110px) rotate(-12deg);animation-delay:-1.6s}
+.c3{bottom:-8%;right:2%;transform:translateZ(70px) rotate(8deg);animation-delay:-3s;width:52px;height:52px;border-radius:17px}
+@keyframes bob{50%{translate:0 -12px}}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:13px;color:var(--mut)}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#a78bfa;box-shadow:0 0 12px #a78bfa}
+h1{font-size:clamp(38px,11vw,72px);font-weight:800;background:linear-gradient(180deg,#fff,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:520px;color:var(--mut);margin:12px auto 0}
+.row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:6px}
+
+/* sections */
+section{padding:34px 0 6px}
+h2{font-size:clamp(24px,6vw,36px);margin-bottom:18px}
+h2 span{color:var(--v2)}
+.glass-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:20px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 20px 40px rgba(0,0,0,.25)}
+.about{display:grid;gap:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{text-align:center;padding:14px 6px;border-radius:18px;background:rgba(139,92,246,.14);border:1px solid rgba(167,139,250,.25)}
+.stat b{display:block;font:700 20px "Unbounded",sans-serif}
+.stat small{color:var(--mut);font-size:12px}
+.gear{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.gear .g{padding:16px;border-radius:20px;background:var(--card);border:1px solid var(--line);transition:transform .4s var(--anim--hover-ease),border-color .3s}
+.gear .g:hover{transform:translateY(-4px) rotateX(6deg);border-color:var(--v2)}
+.g em{font-style:normal;font-size:26px;display:block;margin-bottom:6px}
+.g small{display:block;color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.g span{font-weight:600}
+.socials{display:grid;gap:14px}
+.soc{display:flex;align-items:center;gap:14px;padding:16px;border-radius:22px;background:var(--card);border:1px solid var(--line);transition:transform .4s var(--anim--hover-ease),background .3s}
+.soc:hover,.soc:active{transform:scale(.98);background:rgba(139,92,246,.16)}
+.soc .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;flex:none;background:linear-gradient(135deg,var(--v1),var(--v3));box-shadow:0 10px 20px rgba(91,33,182,.5),inset 0 1px 0 rgba(255,255,255,.4)}
+.soc svg{width:26px;height:26px;fill:#fff}
+.soc b{display:block}.soc small{color:var(--mut)}
+.soc .go{margin-left:auto;color:var(--v2);font-size:20px}
+.donate{text-align:center;display:grid;justify-items:center;gap:14px;background:linear-gradient(160deg,rgba(139,92,246,.28),rgba(255,255,255,.04))}
+.num{font:700 clamp(22px,7vw,34px) "Unbounded",sans-serif;letter-spacing:.02em;user-select:all}
+.hint{color:var(--mut);font-size:14px;max-width:420px;margin:0}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 0 10px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s var(--anim--hover-ease)}
+.rv.in{opacity:1;transform:none}
+@media(min-width:760px){.about{grid-template-columns:1.2fr 1fr;align-items:center}.socials{grid-template-columns:repeat(3,1fr)}.soc{flex-direction:column;text-align:center;padding:26px}.soc .go{margin:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* ===== LIQUID GLASS BUTTON ===== */
+.button-wrap{position:relative;z-index:2;display:inline-block;border-radius:999vw;background:transparent;pointer-events:none;transition:all var(--anim--hover-time) var(--anim--hover-ease)}
+.button-shadow{--cut:2em;position:absolute;width:calc(100% + var(--cut));height:calc(100% + var(--cut));top:calc(0% - var(--cut)/2);left:calc(0% - var(--cut)/2);filter:blur(clamp(2px,.125em,12px));overflow:visible;pointer-events:none}
+.button-shadow::after{content:"";position:absolute;z-index:0;inset:0;border-radius:999vw;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(124,58,237,.25));width:calc(100% - var(--cut) - .25em);height:calc(100% - var(--cut) - .25em);top:calc(var(--cut) - .5em);left:calc(var(--cut) - .875em);padding:.125em;box-sizing:border-box;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;-webkit-mask-composite:xor;transition:all var(--anim--hover-time) var(--anim--hover-ease)}
+.glass{--border-width:clamp(1px,.0625em,4px);all:unset;display:block;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent;pointer-events:auto;z-index:3;background:linear-gradient(-75deg,rgba(255,255,255,.08),rgba(255,255,255,.28),rgba(255,255,255,.08));border-radius:999vw;box-shadow:inset 0 .125em .125em rgba(0,0,0,.05),inset 0 -.125em .125em rgba(255,255,255,.5),0 .25em .125em -.125em rgba(0,0,0,.3),0 0 .1em .25em inset rgba(255,255,255,.2);backdrop-filter:blur(clamp(1px,.125em,4px));-webkit-backdrop-filter:blur(clamp(1px,.125em,4px));transition:all var(--anim--hover-time) var(--anim--hover-ease)}
+.glass:hover{transform:scale(.975);backdrop-filter:blur(.01em);box-shadow:inset 0 .125em .125em rgba(0,0,0,.05),inset 0 -.125em .125em rgba(255,255,255,.5),0 .15em .05em -.1em rgba(0,0,0,.25),0 0 .05em .1em inset rgba(255,255,255,.5)}
+.glass span{position:relative;display:flex;align-items:center;gap:.6em;user-select:none;-webkit-user-select:none;font-family:"Inter",sans-serif;letter-spacing:-.02em;font-weight:600;font-size:1em;color:#fff;text-shadow:0 .15em .1em rgba(0,0,0,.35);transition:all var(--anim--hover-time) var(--anim--hover-ease);padding-inline:1.5em;padding-block:.875em}
+.glass span svg{width:1.15em;height:1.15em;fill:currentColor}
+.glass span::after{content:"";display:block;position:absolute;width:calc(100% - var(--border-width));height:calc(100% - var(--border-width));top:calc(var(--border-width)/2);left:calc(var(--border-width)/2);box-sizing:border-box;border-radius:999vw;overflow:clip;background:linear-gradient(var(--angle-2),rgba(255,255,255,0) 0%,rgba(255,255,255,.5) 40% 50%,rgba(255,255,255,0) 55%);z-index:3;mix-blend-mode:screen;pointer-events:none;background-size:200% 200%;background-position:0% 50%;background-repeat:no-repeat;transition:background-position calc(var(--anim--hover-time)*1.25) var(--anim--hover-ease),--angle-2 calc(var(--anim--hover-time)*1.25) var(--anim--hover-ease)}
+.glass:hover span::after{background-position:25% 50%}
+.glass:active span::after{background-position:50% 15%;--angle-2:-15deg}
+.glass::after{content:"";position:absolute;z-index:1;inset:0;border-radius:999vw;width:calc(100% + var(--border-width));height:calc(100% + var(--border-width));top:calc(0% - var(--border-width)/2);left:calc(0% - var(--border-width)/2);padding:var(--border-width);box-sizing:border-box;background:conic-gradient(from var(--angle-1) at 50% 50%,rgba(255,255,255,.7),rgba(255,255,255,0) 5% 40%,rgba(255,255,255,.7) 50%,rgba(255,255,255,0) 60% 95%,rgba(255,255,255,.7)),linear-gradient(180deg,rgba(255,255,255,.25),rgba(255,255,255,.25));mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;-webkit-mask-composite:xor;transition:all var(--anim--hover-time) var(--anim--hover-ease),--angle-1 500ms ease}
+.glass:hover::after{--angle-1:-125deg}
+.glass:active::after{--angle-1:-75deg}
+.button-wrap:has(.glass:hover) .button-shadow{filter:blur(clamp(2px,.0625em,6px))}
+.button-wrap:has(.glass:hover) .button-shadow::after{top:calc(var(--cut) - .875em)}
+.button-wrap:has(.glass:active){transform:rotate3d(1,0,0,25deg)}
+.button-wrap:has(.glass:active) .button-shadow::after{top:calc(var(--cut) - .5em);opacity:.75}
+.glass.violet{background:linear-gradient(-75deg,rgba(139,92,246,.45),rgba(192,132,252,.7),rgba(139,92,246,.45))}
+@media(hover:none) and (pointer:coarse){.glass span::after,.glass:active span::after{--angle-2:-45deg}.glass::after,.glass:hover::after,.glass:active::after{--angle-1:-75deg}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tw" viewBox="0 0 24 24"><path d="M4 3 3 7v12h4v3h3l3-3h4l5-5V3H4zm15 10-3 3h-4l-3 3v-3H6V5h13v8zm-4-5h2v4h-2zm-5 0h2v4h-2z"/></symbol>
+  <symbol id="tg" viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.7-7.9c.4-.3-.1-.5-.6-.2L6.9 13.4 2.3 12c-1-.3-1-1 .2-1.5L20.400 3.600c.8-.3 1.600.2 1.500.7z"/></symbol>
+  <symbol id="tt" viewBox="0 0 24 24"><path d="M16.500 3c.3 2.300 1.700 3.800 4 4v3.100c-1.500 0-2.900-.4-4-1.200V15a6 6 0 1 1-6-6c.3 0 .6 0 .9.100v3.200a2.900 2.900 0 1 0 2 2.700V3h3.100z"/></symbol>
+</svg>
+
+<div class="bg"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grain"></div></div>
+
+<main>
+  <div class="top">
+    <div class="logo">LYOHA<i>.</i></div>
+    <div class="button-wrap" style="font-size:14px"><a class="glass violet" href="#donate"><span>Донат</span></a><div class="button-shadow"></div></div>
+  </div>
+
+  <header class="hero">
+    <div class="scene" id="scene">
+      <div class="stack" id="stack">
+        <div class="ring"></div>
+        <!-- Чтобы поставить свою аву: замени <b>L</b> на <img src="ссылка-на-фото" alt="Lyoha"> -->
+        <div class="ava"><b>L</b></div>
+        <a class="chip c1" href="https://twitch.tv/lyohacray" target="_blank" rel="noopener" aria-label="Twitch"><svg><use href="#tw"/></svg></a>
+        <a class="chip c2" href="https://t.me/lyoha32" target="_blank" rel="noopener" aria-label="Telegram"><svg><use href="#tg"/></svg></a>
+        <a class="chip c3" href="https://www.tiktok.com/@lyohich00" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#tt"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <span class="badge">Стример · Шымкент</span>
+      <h1 style="margin-top:16px">Lyoha</h1>
+      <p class="lead">Играю, стримлю, делаю контент и иногда пишу код. Заходи в чат — будет весело.</p>
+    </div>
+    <div class="row">
+      <div class="button-wrap"><a class="glass violet" href="https://twitch.tv/lyohacray" target="_blank" rel="noopener"><span><svg><use href="#tw"/></svg>Смотреть Twitch</span></a><div class="button-shadow"></div></div>
+      <div class="button-wrap"><a class="glass" href="https://t.me/lyoha32" target="_blank" rel="noopener"><span><svg><use href="#tg"/></svg>Telegram</span></a><div class="button-shadow"></div></div>
+    </div>
+  </header>
+
+  <section class="rv">
+    <h2>Обо <span>мне</span></h2>
+    <div class="glass-card about">
+      <div>
+        <p style="margin:0 0 10px">Привет! Я Лёха из Шымкента. Стримлю игры, общаюсь с чатом и показываю, как делаю свои проекты.</p>
+        <p style="margin:0;color:var(--mut)">Здесь можно написать пару строк о себе: во что играешь, когда выходят стримы и чего ждать зрителям.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>Twitch</b><small>основа</small></div>
+        <div class="stat"><b>TikTok</b><small>клипы</small></div>
+        <div class="stat"><b>KZ</b><small>Шымкент</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rv">
+    <h2>Мой <span>сетап</span></h2>
+    <div class="gear" id="gear"></div>
+  </section>
+
+  <section class="rv">
+    <h2>Соц<span>сети</span></h2>
+    <div class="socials">
+      <a class="soc" href="https://twitch.tv/lyohacray" target="_blank" rel="noopener"><div class="ic"><svg><use href="#tw"/></svg></div><div><b>Twitch</b><small>lyohacray</small></div><span class="go">↗</span></a>
+      <a class="soc" href="https://www.tiktok.com/@lyohich00" target="_blank" rel="noopener"><div class="ic"><svg><use href="#tt"/></svg></div><div><b>TikTok</b><small>@lyohich00</small></div><span class="go">↗</span></a>
+      <a class="soc" href="https://t.me/lyoha32" target="_blank" rel="noopener"><div class="ic"><svg><use href="#tg"/></svg></div><div><b>Telegram</b><small>@lyoha32</small></div><span class="go">↗</span></a>
+    </div>
+  </section>
+
+  <section class="rv" id="donate">
+    <h2>Поддержать <span>стрим</span></h2>
+    <div class="glass-card donate">
+      <p class="hint">Перевод через Kaspi по номеру телефона. Спасибо, что ты рядом ♥</p>
+      <div class="num" id="num">+7 707 167 19 32</div>
+      <div class="row">
+        <div class="button-wrap"><button class="glass violet" id="copy" type="button"><span id="copyt">Скопировать номер</span></button><div class="button-shadow"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Lyoha · Сделано с фиолетовым настроением</footer>
+</main>
+
+<script>
+// Девайсы — поменяй на свои модели
+var GEAR=[["🖥️","Монитор","Укажи модель"],["⌨️","Клавиатура","Укажи модель"],["🖱️","Мышь","Укажи модель"],["🎧","Наушники","Укажи модель"],["🎙️","Микрофон","Укажи модель"],["💻","ПК","Укажи сборку"]];
+document.getElementById("gear").innerHTML=GEAR.map(function(g){return '<div class="g"><em>'+g[0]+'</em><small>'+g[1]+'</small><span>'+g[2]+'</span></div>'}).join("");
+
+// 3D-наклон героя (палец/мышь)
+var sc=document.getElementById("scene"),st=document.getElementById("stack");
+function tilt(e){var r=sc.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));
+  st.style.setProperty("--ry",(x*28)+"deg");st.style.setProperty("--rx",(-y*28)+"deg")}
+function reset(){st.style.setProperty("--ry","0deg");st.style.setProperty("--rx","0deg")}
+window.addEventListener("pointermove",tilt);window.addEventListener("pointerup",reset);window.addEventListener("pointerleave",reset);
+var t0=0;(function idle(t){if(!matchMedia("(hover:hover)").matches&&!st.matches(":active")){st.style.setProperty("--ry",Math.sin(t/1400)*10+"deg");st.style.setProperty("--rx",Math.cos(t/1800)*6+"deg")}requestAnimationFrame(idle)})(0);
+
+// появление секций
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+
+// копирование номера
+document.getElementById("copy").addEventListener("click",function(){
+  var t=document.getElementById("copyt"),n="+77071671932";
+  function ok(){t.textContent="Скопировано ✓";setTimeout(function(){t.textContent="Скопировать номер"},2000)}
+  try{navigator.clipboard.writeText(n).then(ok,fb)}catch(e){fb()}
+  function fb(){try{var a=document.createElement("textarea");a.value=n;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove();ok()}catch(e){t.textContent=n}}
+});
+</script>
+</body>
+</html>
