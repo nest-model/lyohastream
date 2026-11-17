@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>💜</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Tektur:wght@500;700;800&display=swap">
 <style>
 @property --angle-1{syntax:"<angle>";inherits:false;initial-value:-75deg}
 @property --angle-2{syntax:"<angle>";inherits:false;initial-value:-45deg}
@@ -24,8 +24,8 @@
 }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--txt);font:400 16px/1.55 "Inter",system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:"Unbounded","Inter",sans-serif;margin:0;line-height:1.1;letter-spacing:-.02em}
+body{margin:0;background:var(--bg);color:var(--txt);font:400 16px/1.55 "Onest",system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Tektur","Onest",sans-serif;margin:0;line-height:1.1;letter-spacing:-.02em}
 a{color:inherit;text-decoration:none}
 
 /* background */
@@ -41,7 +41,7 @@ main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:16px 18px
 
 /* top bar */
 .top{display:flex;align-items:center;justify-content:space-between;padding:6px 0}
-.logo{font-family:"Unbounded",sans-serif;font-weight:800;font-size:18px}
+.logo{font-family:"Tektur",sans-serif;font-weight:800;font-size:18px}
 .logo i{font-style:normal;color:var(--v2)}
 
 /* hero */
@@ -52,7 +52,7 @@ main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:16px 18px
 @keyframes spin{to{transform:translateZ(10px) rotate(360deg)}}
 .ava{position:absolute;inset:12px;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 30% 25%,#7c3aed,#2e1065 70%);display:grid;place-items:center;transform:translateZ(30px);border:3px solid rgba(15,8,24,.9)}
 .ava img{width:100%;height:100%;object-fit:cover;display:block}
-.ava b{font:800 110px/1 "Unbounded",sans-serif;color:rgba(255,255,255,.92);text-shadow:0 8px 30px rgba(0,0,0,.4)}
+.ava b{font:800 110px/1 "Tektur",sans-serif;color:rgba(255,255,255,.92);text-shadow:0 8px 30px rgba(0,0,0,.4)}
 .chip{position:absolute;width:62px;height:62px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 18px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.5);animation:bob 5s ease-in-out infinite}
 .chip svg{width:28px;height:28px;fill:#fff;filter:drop-shadow(0 4px 6px rgba(0,0,0,.4))}
 .c1{top:-6%;right:-8%;transform:translateZ(90px) rotate(10deg)}
@@ -73,7 +73,7 @@ h2 span{color:var(--v2)}
 .about{display:grid;gap:14px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .stat{text-align:center;padding:14px 6px;border-radius:18px;background:rgba(139,92,246,.14);border:1px solid rgba(167,139,250,.25)}
-.stat b{display:block;font:700 20px "Unbounded",sans-serif}
+.stat b{display:block;font:700 20px "Tektur",sans-serif}
 .stat small{color:var(--mut);font-size:12px}
 .gear{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .gear .g{padding:16px;border-radius:20px;background:var(--card);border:1px solid var(--line);transition:transform .4s var(--anim--hover-ease),border-color .3s}
@@ -89,8 +89,21 @@ h2 span{color:var(--v2)}
 .soc b{display:block}.soc small{color:var(--mut)}
 .soc .go{margin-left:auto;color:var(--v2);font-size:20px}
 .donate{text-align:center;display:grid;justify-items:center;gap:14px;background:linear-gradient(160deg,rgba(139,92,246,.28),rgba(255,255,255,.04))}
-.num{font:700 clamp(22px,7vw,34px) "Unbounded",sans-serif;letter-spacing:.02em;user-select:all}
+.num{font:700 clamp(22px,7vw,34px) "Tektur",sans-serif;letter-spacing:.02em;user-select:all}
 .hint{color:var(--mut);font-size:14px;max-width:420px;margin:0}
+.donors{width:100%;margin-top:6px;padding-top:18px;border-top:1px solid var(--line);text-align:left}
+.donors h3{font-size:15px;text-align:center;margin-bottom:14px}
+.dn{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);margin-bottom:8px}
+.dn.top{background:rgba(139,92,246,.18);border-color:rgba(192,132,252,.45)}
+.dn i{font-style:normal;color:var(--mut);width:18px;font-size:13px}
+.dn .n{font-weight:600}
+.dn .h{color:#f0abfc;filter:drop-shadow(0 0 6px #c084fc)}
+.dn .a{margin-left:auto;font-weight:600;color:var(--v2);white-space:nowrap}
+.g .ic3d{display:block;width:58px;height:58px;margin-bottom:12px;perspective:200px}
+.ic3d svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 10px 9px rgba(124,58,237,.55));transform:rotateY(-22deg) rotateX(12deg);transition:transform .5s var(--anim--hover-ease);animation:flo 4.5s ease-in-out infinite}
+.g:hover .ic3d svg{transform:rotateY(22deg) rotateX(-6deg) scale(1.12)}
+.g:nth-child(2n) .ic3d svg{animation-delay:-1.5s}.g:nth-child(3n) .ic3d svg{animation-delay:-3s}
+@keyframes flo{50%{translate:0 -4px}}
 footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 0 10px}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s var(--anim--hover-ease)}
 .rv.in{opacity:1;transform:none}
@@ -103,7 +116,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 0 10px}
 .button-shadow::after{content:"";position:absolute;z-index:0;inset:0;border-radius:999vw;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(124,58,237,.25));width:calc(100% - var(--cut) - .25em);height:calc(100% - var(--cut) - .25em);top:calc(var(--cut) - .5em);left:calc(var(--cut) - .875em);padding:.125em;box-sizing:border-box;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;-webkit-mask-composite:xor;transition:all var(--anim--hover-time) var(--anim--hover-ease)}
 .glass{--border-width:clamp(1px,.0625em,4px);all:unset;display:block;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent;pointer-events:auto;z-index:3;background:linear-gradient(-75deg,rgba(255,255,255,.08),rgba(255,255,255,.28),rgba(255,255,255,.08));border-radius:999vw;box-shadow:inset 0 .125em .125em rgba(0,0,0,.05),inset 0 -.125em .125em rgba(255,255,255,.5),0 .25em .125em -.125em rgba(0,0,0,.3),0 0 .1em .25em inset rgba(255,255,255,.2);backdrop-filter:blur(clamp(1px,.125em,4px));-webkit-backdrop-filter:blur(clamp(1px,.125em,4px));transition:all var(--anim--hover-time) var(--anim--hover-ease)}
 .glass:hover{transform:scale(.975);backdrop-filter:blur(.01em);box-shadow:inset 0 .125em .125em rgba(0,0,0,.05),inset 0 -.125em .125em rgba(255,255,255,.5),0 .15em .05em -.1em rgba(0,0,0,.25),0 0 .05em .1em inset rgba(255,255,255,.5)}
-.glass span{position:relative;display:flex;align-items:center;gap:.6em;user-select:none;-webkit-user-select:none;font-family:"Inter",sans-serif;letter-spacing:-.02em;font-weight:600;font-size:1em;color:#fff;text-shadow:0 .15em .1em rgba(0,0,0,.35);transition:all var(--anim--hover-time) var(--anim--hover-ease);padding-inline:1.5em;padding-block:.875em}
+.glass span{position:relative;display:flex;align-items:center;gap:.6em;user-select:none;-webkit-user-select:none;font-family:"Onest",sans-serif;letter-spacing:-.02em;font-weight:600;font-size:1em;color:#fff;text-shadow:0 .15em .1em rgba(0,0,0,.35);transition:all var(--anim--hover-time) var(--anim--hover-ease);padding-inline:1.5em;padding-block:.875em}
 .glass span svg{width:1.15em;height:1.15em;fill:currentColor}
 .glass span::after{content:"";display:block;position:absolute;width:calc(100% - var(--border-width));height:calc(100% - var(--border-width));top:calc(var(--border-width)/2);left:calc(var(--border-width)/2);box-sizing:border-box;border-radius:999vw;overflow:clip;background:linear-gradient(var(--angle-2),rgba(255,255,255,0) 0%,rgba(255,255,255,.5) 40% 50%,rgba(255,255,255,0) 55%);z-index:3;mix-blend-mode:screen;pointer-events:none;background-size:200% 200%;background-position:0% 50%;background-repeat:no-repeat;transition:background-position calc(var(--anim--hover-time)*1.25) var(--anim--hover-ease),--angle-2 calc(var(--anim--hover-time)*1.25) var(--anim--hover-ease)}
 .glass:hover span::after{background-position:25% 50%}
@@ -121,6 +134,11 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 0 10px}
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gP" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9d5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="gD" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9"/><stop offset="1" stop-color="#1e1038"/></linearGradient>
+    <linearGradient id="gS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#f0abfc"/></linearGradient>
+  </defs>
   <symbol id="tw" viewBox="0 0 24 24"><path d="M4 3 3 7v12h4v3h3l3-3h4l5-5V3H4zm15 10-3 3h-4l-3 3v-3H6V5h13v8zm-4-5h2v4h-2zm-5 0h2v4h-2z"/></symbol>
   <symbol id="tg" viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.7-7.9c.4-.3-.1-.5-.6-.2L6.9 13.4 2.3 12c-1-.3-1-1 .2-1.5L20.400 3.600c.8-.3 1.600.2 1.500.7z"/></symbol>
   <symbol id="tt" viewBox="0 0 24 24"><path d="M16.500 3c.3 2.300 1.700 3.800 4 4v3.100c-1.500 0-2.900-.4-4-1.200V15a6 6 0 1 1-6-6c.3 0 .6 0 .9.100v3.200a2.900 2.900 0 1 0 2 2.700V3h3.100z"/></symbol>
@@ -146,9 +164,9 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 0 10px}
       </div>
     </div>
     <div>
-      <span class="badge">Стример · Шымкент</span>
+      <span class="badge">Стримы каждый день.</span>
       <h1 style="margin-top:16px">Lyoha</h1>
-      <p class="lead">Играю, стримлю, делаю контент и иногда пишу код. Заходи в чат — будет весело.</p>
+      <p class="lead">Играю, стримлю, делаю контент и иногда пишу код. Оформляй фоллоу и наслаждайся).</p>
     </div>
     <div class="row">
       <div class="button-wrap"><a class="glass violet" href="https://twitch.tv/lyohacray" target="_blank" rel="noopener"><span><svg><use href="#tw"/></svg>Смотреть Twitch</span></a><div class="button-shadow"></div></div>
@@ -160,12 +178,12 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 0 10px}
     <h2>Обо <span>мне</span></h2>
     <div class="glass-card about">
       <div>
-        <p style="margin:0 0 10px">Привет! Я Лёха из Шымкента. Стримлю игры, общаюсь с чатом и показываю, как делаю свои проекты.</p>
-        <p style="margin:0;color:var(--mut)">Здесь можно написать пару строк о себе: во что играешь, когда выходят стримы и чего ждать зрителям.</p>
+        <p style="margin:0 0 10px">Привет! Меня зовут Матвей((Лёха)). Стримлю игры, общаюсь с чатом и показываю, как делаю свои проекты.</p>
+        <p style="margin:0;color:var(--mut)">Ну тут типа я чёт полезное написал))</p>
       </div>
       <div class="stats">
         <div class="stat"><b>Twitch</b><small>основа</small></div>
-        <div class="stat"><b>TikTok</b><small>клипы</small></div>
+        <div class="stat"><b>TikTok</b><small>Тоже стримлю</small></div>
         <div class="stat"><b>KZ</b><small>Шымкент</small></div>
       </div>
     </div>
@@ -188,21 +206,41 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 0 10px}
   <section class="rv" id="donate">
     <h2>Поддержать <span>стрим</span></h2>
     <div class="glass-card donate">
-      <p class="hint">Перевод через Kaspi по номеру телефона. Спасибо, что ты рядом ♥</p>
+      <p class="hint">Поддержать можно через Kaspi по номеру телефона (если ты из КЗ). Спасибо за поддержку этим людям ♥</p>
       <div class="num" id="num">+7 707 167 19 32</div>
       <div class="row">
         <div class="button-wrap"><button class="glass violet" id="copy" type="button"><span id="copyt">Скопировать номер</span></button><div class="button-shadow"></div></div>
       </div>
+      <div class="donors">
+        <h3>Спасибо им ♥</h3>
+        <div id="donors"></div>
+      </div>
     </div>
   </section>
 
-  <footer>© 2026 Lyoha · Сделано с фиолетовым настроением</footer>
+  <footer>© 2026 Lyoha</footer>
 </main>
 
 <script>
 // Девайсы — поменяй на свои модели
-var GEAR=[["🖥️","Монитор","Укажи модель"],["⌨️","Клавиатура","Укажи модель"],["🖱️","Мышь","Укажи модель"],["🎧","Наушники","Укажи модель"],["🎙️","Микрофон","Укажи модель"],["💻","ПК","Укажи сборку"]];
-document.getElementById("gear").innerHTML=GEAR.map(function(g){return '<div class="g"><em>'+g[0]+'</em><small>'+g[1]+'</small><span>'+g[2]+'</span></div>'}).join("");
+var GEAR=[["🖥️","Монитор","Xtreon 100Гц"],["⌨️","Клавиатура","Кастом AJAZZ AK820PRO"],["🖱️","Мышь","ATK DRGNFLY A9"],["🎧","Наушники","MCHOSEV9 ULTRA"],["🎙️","Микрофон","От наушников"],["💻","ПК","R5 5600 | RTX 5050 | 32GB RAM | 1TB SSD"]];
+// 3D-иконки девайсов (порядок = порядок в GEAR)
+var kb='';[[23,0],[30,3]].forEach(function(r){for(var i=0;i<7;i++)kb+='<rect x="'+(10+r[1]*0.6+i*6.6)+'" y="'+r[0]+'" width="5.2" height="5" rx="1.5" fill="'+((i+r[0])%5==0?'url(#gS)':'#ddd6fe')+'"/>'});
+var ICONS=[
+'<svg viewBox="0 0 64 64"><rect x="6" y="9" width="52" height="34" rx="6" fill="url(#gD)" stroke="url(#gP)" stroke-width="2"/><rect x="10" y="13" width="44" height="26" rx="3" fill="url(#gS)"/><path d="M10 13h44v9L10 33z" fill="#fff" opacity=".18"/><path d="M26 43h12l2 8H24z" fill="url(#gP)"/><rect x="17" y="51" width="30" height="5" rx="2.5" fill="url(#gP)"/></svg>',
+'<svg viewBox="0 0 64 64"><rect x="4" y="16" width="56" height="32" rx="7" fill="url(#gD)" stroke="url(#gP)" stroke-width="2"/>'+kb+'<rect x="18" y="38" width="28" height="5" rx="2.5" fill="#ddd6fe"/></svg>',
+'<svg viewBox="0 0 64 64"><rect x="19" y="6" width="26" height="52" rx="13" fill="url(#gD)" stroke="url(#gP)" stroke-width="2"/><path d="M19 24v-5a13 13 0 0 1 26 0v5z" fill="url(#gP)" opacity=".45"/><path d="M32 6v18" stroke="#ede9fe" stroke-width="1.5"/><rect x="29.500" y="12" width="5" height="9" rx="2.500" fill="url(#gS)"/><path d="M24 49q8 6 16 0" stroke="#e879f9" stroke-width="2.500" fill="none" stroke-linecap="round"/></svg>',
+'<svg viewBox="0 0 64 64"><path d="M12 38v-6a20 20 0 0 1 40 0v6" fill="none" stroke="url(#gP)" stroke-width="5" stroke-linecap="round"/><rect x="7" y="34" width="13" height="21" rx="6" fill="url(#gD)" stroke="url(#gP)" stroke-width="2"/><rect x="44" y="34" width="13" height="21" rx="6" fill="url(#gD)" stroke="url(#gP)" stroke-width="2"/><rect x="10" y="39" width="4" height="11" rx="2" fill="url(#gS)"/><rect x="50" y="39" width="4" height="11" rx="2" fill="url(#gS)"/></svg>',
+'<svg viewBox="0 0 64 64"><rect x="22" y="4" width="20" height="31" rx="10" fill="url(#gD)" stroke="url(#gP)" stroke-width="2"/><path d="M25 13h14M25 19h14M25 25h14" stroke="#c4b5fd" stroke-width="1.500" opacity=".7"/><rect x="26" y="8" width="4" height="12" rx="2" fill="#fff" opacity=".3"/><path d="M14 28a18 18 0 0 0 36 0" fill="none" stroke="url(#gP)" stroke-width="3.500" stroke-linecap="round"/><path d="M32 46v8" stroke="url(#gP)" stroke-width="3.500"/><rect x="21" y="54" width="22" height="5" rx="2.500" fill="url(#gP)"/></svg>',
+'<svg viewBox="0 0 64 64"><rect x="14" y="4" width="36" height="56" rx="7" fill="url(#gD)" stroke="url(#gP)" stroke-width="2"/><rect x="18" y="8" width="28" height="36" rx="4" fill="url(#gS)" opacity=".35"/><circle cx="32" cy="18" r="7" fill="none" stroke="#f0abfc" stroke-width="2"/><circle cx="32" cy="18" r="2" fill="#f0abfc"/><circle cx="32" cy="34" r="7" fill="none" stroke="#f0abfc" stroke-width="2"/><circle cx="32" cy="34" r="2" fill="#f0abfc"/><path d="M18 8h12L18 30z" fill="#fff" opacity=".15"/><rect x="18" y="47" width="28" height="3" rx="1.500" fill="url(#gS)"/><circle cx="32" cy="55" r="2.200" fill="#e879f9"/></svg>'];
+document.getElementById("gear").innerHTML=GEAR.map(function(g,i){return '<div class="g"><em class="ic3d">'+ICONS[i]+'</em><small>'+g[1]+'</small><span>'+g[2]+'</span></div>'}).join("");
+
+// Донатеры: [имя, сумма в ₸]. Добавляй новых сюда, порядок не важен
+var DONORS=[["Айдын С.",1464],["Климир К.",400],["Амирлан Д.",201],["Дияр Е.",1000],["Ренард М.",464],["Юрий У.",3300],["Самат Б.",3070]];
+document.getElementById("donors").innerHTML=DONORS.slice().sort(function(a,b){return b[1]-a[1]}).map(function(d,i){
+  var big=d[1]>=1000;
+  return '<div class="dn'+(big?' top':'')+'"><i>'+(i+1)+'</i><span class="n">'+d[0]+'</span>'+(big?'<span class="h">♥</span>':'')+'<span class="a">'+d[1].toLocaleString("ru-RU")+' ₸</span></div>';
+}).join("");
 
 // 3D-наклон героя (палец/мышь)
 var sc=document.getElementById("scene"),st=document.getElementById("stack");
